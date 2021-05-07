@@ -1,7 +1,7 @@
 //import the main express object
-import express from 'express'
+import express from 'express';
 //import cors so we can make calls from any browser
-import cors from 'cors'
+import cors from 'cors';
 //make an express "app"
 const app = express();
 
@@ -16,5 +16,5 @@ app.get('/', (req, res) => {
 
 // start the http server
 app.listen(8001, () => {
-  console.log('App start on port 8001')
-})
+  console.log('App start on port 8001');
+});
