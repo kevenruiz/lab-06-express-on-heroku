@@ -1,20 +1,12 @@
-//import the main express object
-import express from 'express';
-//import cors so we can make calls from any browser
-import cors from 'cors';
-//make an express "app"
-const app = express();
+// import our app file
+import app from './lib/app.js';
 
-// register plugins
-app.use(cors());
+// either use the env variable PORT, or default to 8001
+const port = process.env.PORT || 8001;
 
-//heartbeat response -something that says hi on root get 
-app.get('/', (req, res) => {
-  res.send('Welcome to ther world of hello!');
-
-});
-
-// start the http server
-app.listen(8001, () => {
-  console.log('App start on port 8001');
+// time to start the server!
+app.listen(port, () => {
+  // log a message when all is well...
+  // eslint-disable-next-line no-console
+  console.log(`App listening at http://localhost:${port}`);
 });
